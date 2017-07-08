@@ -37,3 +37,4 @@ config/initializers/secret_token.rb
 
 # Ignore Byebug command history file.
 .byebug_history
+erd.pdf

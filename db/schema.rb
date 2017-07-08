@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170708185658) do
+ActiveRecord::Schema.define(version: 20170708191101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20170708185658) do
     t.integer "recipient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "post_id"
+    t.index ["post_id"], name: "index_conversations_on_post_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -47,6 +49,11 @@ ActiveRecord::Schema.define(version: 20170708185658) do
     t.string "transmission_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "image"
+    t.bigint "user_id"
     t.index ["condition"], name: "index_posts_on_condition"
     t.index ["cylinders"], name: "index_posts_on_cylinders"
     t.index ["drivetrain"], name: "index_posts_on_drivetrain"
@@ -59,6 +66,7 @@ ActiveRecord::Schema.define(version: 20170708185658) do
     t.index ["price"], name: "index_posts_on_price"
     t.index ["title_status"], name: "index_posts_on_title_status"
     t.index ["transmission_type"], name: "index_posts_on_transmission_type"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -70,6 +78,8 @@ ActiveRecord::Schema.define(version: 20170708185658) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "conversations", "posts"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
+  add_foreign_key "posts", "users"
 end
