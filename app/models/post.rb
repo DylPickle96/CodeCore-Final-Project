@@ -20,7 +20,7 @@ class Post < ApplicationRecord
   validates :title_status, presence: {message: 'Must be provided.'}
   validates :transmission_type, presence: {message: 'Must be provided.'}
 
-  #mount_uploader :image, ImageUploader
+  mount_uploader :image, ImageUploader
 
   private
 
