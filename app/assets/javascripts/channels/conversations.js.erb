@@ -1,0 +1,25 @@
+<% Conversation.all.each do |conversation| %>
+  App['room' + <%= conversation.id %>] = App.cable.subscriptions.create({channel:"ConversationChannel", room: <%= conversation.id %>}, {
+    connected() {
+      scroll_bottom();
+    },
+      // Called when the subscription is ready for use on the server
+
+    disconnected() {},
+      // Called when the subscription has been terminated by the server
+
+    received(data) {
+      const parser = new DOMParser();
+      let doc = parser.parseFromString(data.message, "text/html");
+      let messageTemplate = doc.firstChild.lastChild.firstChild;
+      document.getElementById('messages').appendChild(messageTemplate);
+      scroll_bottom();
+    },
+
+
+  });
+<% end %>
+
+function scroll_bottom() {
+  $('#messages').scrollTop($('#messages')[0].scrollHeight)
+}
