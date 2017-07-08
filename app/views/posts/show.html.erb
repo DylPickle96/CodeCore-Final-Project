@@ -1,0 +1,44 @@
+<%= "#{@post.model_year} #{@post.make} #{@post.model}" %>
+
+<p>
+  <% if can? :edit, @post %>
+    <%= link_to 'Edit Post', edit_post_path(@post) %>
+  <% end %>
+  <% if can? :destroy, @post %>
+    <%= link_to 'Delete Post',
+      post_path(@post),
+      method: :delete,
+      data: { confirm: 'Are you sure you want to delete this?' } %>
+  <% end %>
+</p>
+<p>
+  Posted By: <strong><%= @post.user.first_name %></strong>
+</p>
+
+<% if @post.user.id != current_user.id %>
+  <div class="item">
+  <%= link_to 'Message User', conversations_path(post_id: @post.id, sender_id: current_user.id, recipient_id: @post.user.id), method: 'post'%>
+  </div>
+<% end %>
+
+<%= image_tag @post.image.url(:default) if @post.image.present? %>
+
+<div style='width: 400px;'>
+  <div id="map" style='width: 400px; height: 300px;'></div>
+</div>
+
+<script>
+  let handler = Gmaps.build('Google');
+  handler.buildMap({ internal: {id: 'map'}}, function(){
+    const markers = handler.addMarkers([
+      {
+        lat: <%= @post.latitude %>,
+        lng: <%= @post.longitude %>,
+        infowindow: "<%= @post.model_year %> <%= @post.make %> <%= @post.model %>"
+      }
+    ]);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    handler.getMap().setZoom(12);
+  });
+</script>

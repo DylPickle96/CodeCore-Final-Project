@@ -1,0 +1,23 @@
+<h1> Post details </h1>
+
+<div>
+  <div>
+    <%= @post.model_year %> <%= @post.make %> <%= @post.model %>
+  </div>
+</div>
+
+<h1> Messages </h1>
+
+<div id="messages" class="messages">
+  <%= render "messages", messages: @messages %>
+</div>
+
+  <%= form_for [@conversation, @message], remote: true, html: {class: "reply-form"} do |f| %>
+    <div class="field">
+      <%= f.text_field :body, class: "form-control", autocomplete:'off' %>
+    </div>
+      <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
+    <div>
+      <%= f.submit "Send" %>
+    </div>
+  <% end %>

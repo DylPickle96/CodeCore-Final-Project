@@ -1,0 +1,7 @@
+if (!messages) {
+  const messages = document.querySelector('#messages');
+}
+
+messages.innerHTML = "<%= j render 'messages', messages: @conversation.messages %>";
+
+//document.querySelector('.reply-form').reset();

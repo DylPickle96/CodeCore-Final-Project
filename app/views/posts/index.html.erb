@@ -1,0 +1,15 @@
+<h1> All Posts </h1>
+
+<%= link_to('New Post', new_post_path) %><br />
+<br />
+<br />
+
+<%= form_tag(posts_path, method: :get) do %>
+  <%= text_field_tag :term, params[:term], placeholder: 'Search Posts...' %>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
+
+<% @posts.each do |post| %>
+  <%= link_to "#{post.model_year} #{post.make} #{post.model}", post_path(post) %>
+  <hr />
+<% end %>

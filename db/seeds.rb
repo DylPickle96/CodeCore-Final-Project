@@ -1,7 +1,121 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+User.create([
+  {first_name: 'Dylan', last_name: 'Smith', email: 'Dylan@gmail.com', password: '123', password_confirmation: '123'},
+  {first_name: 'Melody', last_name: 'Helder', email: 'Melody@gmail.com', password: '123', password_confirmation: '123'},
+  {first_name: 'Beanz', last_name: 'Smith', email: 'Beanz@gmail.com', password: '123', password_confirmation: '123'},
+  {first_name: 'Hung', last_name: 'Nguyen', email: 'Hung@gmail.com', password: '123', password_confirmation: '123'},
+  {first_name: 'Jason',last_name: 'Tam', email: 'Jason@gmail.com', password: '123', password_confirmation: '123'}
+  ])
+
+Post.create([
+{make: 'BMW', model: '328i', odometer: 320_000, price: 5000.00, model_year: 1996, condition: 'Used', cylinders: 6, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Blue', title_status: 'Clean', transmission_type: 'Manual', user_id: 1},
+{make: 'BMW', model: 'M3', odometer: 100_000, price: 35000.00, model_year: 2010, condition: 'Used', cylinders: 8, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Blue', title_status: 'Clean', transmission_type: 'Automatic', user_id: 1},
+{make: 'Porsche', model: 'Panamera', odometer: 0, price: 150000.00, model_year: 2016, condition: 'New', cylinders: 8, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'White', title_status: 'Clean', transmission_type: 'Dual-Clutch Automatic', user_id: 2},
+{make: 'Lamborghini', model: 'Huracan', odometer: 5000, price: 300000.00, model_year: 2016, condition: 'New', cylinders: 10, drivetrain: 'AWD', fuel: 'Gas', paint_colour: 'Gold', title_status: 'Clean', transmission_type: 'Dual-Clutch Automatic', user_id: 2},
+{make: 'Nissan', model: 'Skyline GT-R', odometer: 20000, price: 20000.00, model_year: 1999, condition: 'Used', cylinders: 6, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Gold', title_status: 'Clean', transmission_type: 'Manual', user_id: 1},
+{make: 'BMW', model: 'M5', odometer: 150000, price: 20000.00, model_year: 2000, condition: 'Used', cylinders: 8, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Blue', title_status: 'Clean', transmission_type: 'Manual', user_id: 3},
+{make: 'Volkswagen', model: 'Golf', odometer: 300000, price: 1250.00, model_year: 1995, condition: 'Used', cylinders: 4, drivetrain: 'FWD', fuel: 'Gas', paint_colour: 'Pink', title_status: 'Clean', transmission_type: 'Automatic', user_id: 4},
+{make: 'Honda', model: 'Civic', odometer: 205000, price: 1000.00, model_year: 1998, condition: 'Used', cylinders: 4, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Purple', title_status: 'Clean', transmission_type: 'Automatic', user_id: 2},
+{make: 'Honda', model: 'Prelude', odometer: 205000, price: 1000.00, model_year: 1998, condition: 'Used', cylinders: 6, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Purple', title_status: 'Clean', transmission_type: 'Automatic', user_id: 2},
+{make: 'Volkswagen', model: 'Jetti', odometer: 381000, price: 2600.00, model_year: 2000, condition: 'Used', cylinders: 4, drivetrain: 'FWD', fuel: 'Diesel', paint_colour: 'Black', title_status: 'Clean', transmission_type: 'Automatic', user_id: 4},
+{make: 'Toyota', model: 'Camry', odometer: 172000, price: 3950.00, model_year: 2003, condition: 'Used', cylinders: 4, drivetrain: 'FWD', fuel: 'Gas', paint_colour: 'Grey', title_status: 'Clean', transmission_type: 'Automatic', user_id: 5},
+{make: 'Toyota', model: 'Supra', odometer: 100000, price: 35000.00, model_year: 1996, condition: 'Used', cylinders: 6, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'White', title_status: 'Clean', transmission_type: 'Automatic', user_id: 1},
+{make: 'Misubishi', model: 'Evolution V', odometer: 150000, price: 12000.00, model_year: 1998, condition: 'Used', cylinders: 4, drivetrain: 'AWD', fuel: 'Gas', paint_colour: 'White', title_status: 'Clean', transmission_type: 'Manual', user_id: 2},
+{make: 'Nissan', model: '180sx', odometer: 212000, price: 10000.00, model_year: 1992, condition: 'Used', cylinders: 4, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Gold', title_status: 'Clean', transmission_type: 'Manual', user_id: 3},
+{make: 'Nissan', model: '240sx', odometer: 300000, price: 6500.00, model_year: 1900, condition: 'Used', cylinders: 4, drivetrain: 'EWD', fuel: 'Gas', paint_colour: 'Grey', title_status: 'Clean', transmission_type: 'Automatic', user_id: 4},
+{make: 'Pontiac', model: 'Sunfire', odometer: 190500, price: 600.00, model_year: 1997, condition: 'Used', cylinders: 4, drivetrain: 'FWD', fuel: 'Gas', paint_colour: 'Grey', title_status: 'Clean', transmission_type: 'Automatic', user_id: 5},
+{make: 'Chevrolet', model: 'Cruze RS Turbo', odometer: 143000, price: 9600.00, model_year: 2003, condition: 'Used', cylinders: 4, drivetrain: 'FWD', fuel: 'Gas', paint_colour: 'Black', title_status: 'Clean', transmission_type: 'Automatic', user_id: 2},
+{make: 'Mercedes-Benz', model: 'CLS COUPE', odometer: 0, price: 92500.00, model_year: 2017, condition: 'New', cylinders: 8, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'red', title_status: 'Clean', transmission_type: 'Automatic', user_id: 1},
+{make: 'Ford', model: 'Mustang', odometer: 20000, price: 10000.00, model_year: 2010, condition: 'Used', cylinders: 8, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Green', title_status: 'Clean', transmission_type: 'Automatic', user_id: 3},
+{make: 'Ford', model: 'Shelby GT500', odometer: 75000, price: 10000.00, model_year: 2011, condition: 'Used', cylinders: 8, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Black', title_status: 'Clean', transmission_type: 'Manual', user_id: 4},
+{make: 'Ford', model: 'Mustang Boss 302', odometer: 500000, price: 50000.00, model_year: 2012, condition: 'Used', cylinders: 8, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Red', title_status: 'Clean', transmission_type: 'Manual', user_id: 5},
+{make: 'Jeep', model: 'Grand Cheokee', odometer: 159900, price: 3250.00, model_year: 1997, condition: 'Used', cylinders: 8, drivetrain: '4WD', fuel: 'Gas', paint_colour: 'grey', title_status: 'Clean', transmission_type: 'Automatic', user_id: 5},
+{make: 'Audi', model: 'R8', odometer: 15000, price: 100000.00, model_year: 2015, condition: 'New', cylinders: 10, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'grey', title_status: 'Clean', transmission_type: 'S-tronic', user_id: 1},
+{make: 'Ford', model: 'Mustang', odometer: 150000, price: 8000.00, model_year: 1982, condition: 'Used', cylinders: 8, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Purple', title_status: 'Rebuilt', transmission_type: 'Manual', user_id: 2},
+{make: 'BMW', model: '535i', odometer: 189000, price: 13950.00, model_year: 2008, condition: 'Used', cylinders: 6, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'White', title_status: 'Clean', transmission_type: 'Automatic', user_id: 3},
+{make: 'Ford', model: 'Explorer', odometer: 189000, price: 1500.00, model_year: 1996, condition: 'Used', cylinders: 6, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Silver', title_status: 'Rebuilt', transmission_type: 'Automatic', user_id: 4},
+{make: 'Ford', model: 'Fusion', odometer: 113900, price: 10000.00, model_year: 2008, condition: 'Used', cylinders: 3, drivetrain: 'FWD', fuel: 'Gas', paint_colour: 'Red', title_status: 'Clean', transmission_type: 'Automatic', user_id: 5},
+{make: 'Toyota', model: 'Aristo', odometer: 9500, price: 9500.00, model_year: 198, condition: 'Used', cylinders: 6, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'White', title_status: 'Clean', transmission_type: 'Automatic', user_id: 1},
+{make: 'Chevrolet', model: 'Aveo', odometer: 19500, price: 2800.00, model_year: 2008, condition: 'Used', cylinders: 4, drivetrain: 'FWD', fuel: 'Gas', paint_colour: 'Red', title_status: 'Clean', transmission_type: 'Automatic', user_id: 1},
+{make: 'BMW', model: '335i', odometer: 100_000, price: 8000.00, model_year: 2007, condition: 'Used', cylinders: 6, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'grey', title_status: 'Clean', transmission_type: 'Manual', user_id: 2},
+{make: 'Mercedes-Benz', model: 'AMG CLS 63', odometer: 12500, price: 17500.00, model_year: 2010, condition: 'Used', cylinders: 6, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Black', title_status: 'Clean', transmission_type: 'Automatic', user_id: 3},
+{make: 'Dodge', model: 'Ram 2500', odometer: 30000, price: 9750.00, model_year: 1999, condition: 'Used', cylinders: 6, drivetrain: 'RWD', fuel: 'Diesel', paint_colour: 'Blue', title_status: 'Rebuilt', transmission_type: 'Manual', user_id: 4},
+{make: 'Volkswagen', model: 'Jetta', odometer: 648000, price: 12000.00, model_year: 2013, condition: 'Used', cylinders: 4, drivetrain: 'FWD', fuel: 'Gas', paint_colour: 'White', title_status: 'Clean', transmission_type: 'Automatic', user_id: 5},
+{make: 'Mazda', model: '626 LX', odometer: 19900, price: 3000.00, model_year: 2001, condition: 'Used', cylinders: 6, drivetrain: 'FWD', fuel: 'Gas', paint_colour: 'Grey', title_status: 'Clean', transmission_type: 'Automatic', user_id: 1},
+{make: 'BMW', model: 'X5', odometer: 23000, price: 8000.00, model_year: 2006, condition: 'Used', cylinders: 8, drivetrain: 'FWD', fuel: 'Gas', paint_colour: 'Grey', title_status: 'Clean', transmission_type: 'Automatic', user_id: 2},
+{make: 'GMC', model: 'Safari', odometer: 300000, price: 400.00, model_year: 1997, condition: 'Used', cylinders: 6, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Dirty', title_status: 'Reebuilt', transmission_type: 'Automatic', user_id: 3},
+{make: 'Nissan', model: 'Altima', odometer: 12000, price: 2800.00, model_year: 2001, condition: 'Used', cylinders: 4, drivetrain: 'FWD', fuel: 'Gas', paint_colour: 'Gold', title_status: 'Clean', transmission_type: 'Automatic', user_id: 4},
+{make: 'Dodge', model: 'Avenger', odometer: 50000, price: 10000.00, model_year: 2012, condition: 'Used', cylinders: 6, drivetrain: 'FWD', fuel: 'Gas', paint_colour: 'White', title_status: 'Clean', transmission_type: 'Automatic', user_id: 5},
+{make: 'Mercedes-Benz', model: 'C280', odometer: 190000, price: 7900.00, model_year: 2007, condition: 'Used', cylinders: 6, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Black', title_status: 'Clean', transmission_type: 'Automatic', user_id: 1},
+{make: 'Chevrolet', model: 'K4 Blazer', odometer: 150000, price: 15000.00, model_year: 1974, condition: 'Used', cylinders: 8, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Green', title_status: 'Clean', transmission_type: 'Automatic', user_id: 2},
+{make: 'Porsche', model: '911 GT3', odometer: 80000, price: 50000, model_year: 2012, condition: 'Used', cylinders: 8, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Blue', title_status: 'Clean', transmission_type: 'Manual', user_id: 3},
+{make: 'Bugatti', model: 'Chiron', odometer: 0, price: 3000000, model_year: 2017, condition: 'New', cylinders: 12, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Blue', title_status: 'Clean', transmission_type: 'Automatic', user_id: 4},
+{make: 'Chevrolet', model: '2500', odometer: 25000, price: 43750, model_year: 2014, condition: 'Used', cylinders: 8, drivetrain: 'RWD', fuel: 'Diesel', paint_colour: 'Black', title_status: 'Clean', transmission_type: 'Automatic', user_id: 5},
+{make: 'Nissan', model: 'Sentra', odometer: 282000, price: 900, model_year: 2004, condition: 'Used', cylinders: 4, drivetrain: 'FWD', fuel: 'Gas', paint_colour: 'Grey', title_status: 'Clean', transmission_type: 'Automatic', user_id: 1},
+{make: 'Honda', model: 'Civic', odometer: 197500, price: 4000, model_year: 2000, condition: 'Used', cylinders: 4, drivetrain: 'FWD', fuel: 'Gas', paint_colour: 'Blue', title_status: 'Rebuilt', transmission_type: 'Automatic', user_id: 4},
+{make: 'BMW', model: '530i', odometer: 200000, price: 50000, model_year: 2001, condition: 'Used', cylinders: 8, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Gold', title_status: 'Clean', transmission_type: 'Automatic', user_id: 5},
+{make: 'Porsche', model: '918 Spyder', odometer: 2000, price: 150000, model_year: 2014, condition: 'Used', cylinders: 8, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Blue', title_status: 'Clean', transmission_type: 'Dual-Clutch', user_id: 1},
+{make: 'Ford', model: 'Focus RS', odometer: 80000, price: 40000, model_year: 2012, condition: 'Used', cylinders: 4, drivetrain: 'AWD', fuel: 'Gas', paint_colour: 'Light Blue', title_status: 'Clean', transmission_type: 'Manual', user_id: 2},
+{make: 'Honda', model: 'Fit', odometer: 215000, price: 4995, model_year: 2009, condition: 'Used', cylinders: 4, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'White', title_status: 'Clean', transmission_type: 'Manual', user_id: 3},
+{make: 'Ford', model: 'Mustang', odometer: 122000, price: 8000.00, model_year: 2005, condition: 'Used', cylinders: 8, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'White and Blue', title_status: 'Rebuilt', transmission_type: 'Automatic', user_id: 3}
+])
+
+addresses = [
+  "3121 Heather St, Vancouver, BC V5Z 3K2",
+  "1316 Grand Blvd E, North Vancouver, BC V7L 3X6",
+  "10931 Maddocks Rd, Richmond, BC V7A 3N1",
+  "2050 Guilford Dr, Abbotsford, BC V2S 5R3",
+  "22 Sixth St, Nanaimo, BC V9R 5W6",
+  "5 Columbia, North Vancouver, BC, V7J 2J9",
+  "2715 W 41st Ave, Vancouver, BC V6N 3C5",
+  "2715 W 41st Ave, Vancouver, BC V6N 3C5",
+  "4571 W 3rd Ave, Vancouver, BC V6R 1N3",
+  "229 E 61st Ave, Vancouver, BC V5X 2B5",
+  "24827 118a Ave, Maple Ridge, BC V4R 1Z3",
+  "7649 Main St, Vancouver, BC V5X 3K2",
+  "33277 Plaxton Cres, Abbotsford, BC V2S 1V8",
+  "4489 Puget Dr, Vancouver, BC V6L 2V9",
+  "2801 Jingle Pot Rd, Nanaimo, BC V9R 6W5",
+  "6047 186 St, Surrey, BC V3S 7P4",
+  "1499 160a St, Surrey, BC V4A",
+  "964 Saturna Pl, Victoria, BC V8Y 1H4",
+  "479 Culzean Pl, Port Moody, BC V3H 1E8",
+  "962 Plymouth Pl, North Vancouver, BC V7H 2J2",
+  "1825 McEwen Pl, North Vancouver, BC V7J 3P8",
+  "6370 Willow St, Vancouver, BC V5Z 3S8",
+  "1620 Duranleau St, Vancouver, BC V6H 3Y2",
+  "10600 McDonald Rd, Chilliwack, BC V2P 6L6",
+  "10353 156 St, Surrey, BC V3R 4L7",
+  "9127 Nowell St, Chilliwack, BC V2P 4W3",
+  "4306 Norfolk St, Burnaby, BC V5G 4J9",
+  "2603 Panorama Dr, Coquitlam, BC V3E 2W1",
+  "1549 Hammond Ave, Coquitlam, BC V3K 2P4",
+  "33655 Essendene Ave, Abbotsford, BC V2S 2G5",
+  "7360 No 3 Rd, Richmond, BC V6Y 1M9",
+  "700 Centre St, Nanaimo, BC V9R 4Z4",
+  "5982 129 St, Surrey, BC V3X 0C7",
+  "9800 Kilby Dr Unit 29,Richmond, BC V6X 3S2",
+  "15112 Dove Pl, Surrey, BC V3R",
+  "8317 124 St, Surrey, BC V3W 9G2",
+  "8551 Jimmie Rd, Chilliwack, BC V2P 8A8",
+  "455 6th St W, North Vancouver, BC V7M 1K9",
+  "7229 Culloden St, Vancouver, BC V5X 4K1",
+  "10194 152 St, Surrey, BC V3R 6N7",
+  "3347 Valley Ave, Victoria, BC V8X 1R2",
+  "635 Clare Ave, Burnaby, BC V5B 4L5",
+  "3231 Chestnut St, Abbotsford, BC V2S 4M2",
+  "15 Mountain Hwy, North Vancouver, BC V7J 2J9",
+  "556 Nelson St, Victoria, BC V9A 6P6",
+  "650 Michigan St, Victoria, BC V8V 4Y7",
+  "865 N Port Ave, Coquitlam, BC, V3E 1Y4",
+  "14226 32a Ave, Surrey, BC V4P 3P2",
+  "207 Seventh St, Nanaimo, BC V9R 1C9",
+  "2279 Tyner St, Port Coquitlam, BC V3C 2Z4"
+]
+
+count = 0
+
+Post.all.each do |post|
+  post.address = addresses[count]
+  post.save
+  count += 1
+end
