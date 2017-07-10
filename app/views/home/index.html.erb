@@ -1,7 +1,8 @@
 <div class='container-fluid'>
-  <div class='row'>
+
+  <div class='row'> <!-- carousel -->
     <div class='col-xs-12 col-md-12'>
-      <div id='home-page-carousel' class='jumbotron jumbotron-fluid carousel slide' data-ride='carousel'>
+      <div id='home-page-carousel' class='carousel slide' data-ride='carousel'>
         <ol class="carousel-indicators">
           <li data-target="#home-page-carousel" data-slide-to="0" class="active"></li>
           <li data-target="#home-page-carousel" data-slide-to="1"></li>
@@ -11,15 +12,16 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
           <div class="item active">
-            <h1>test1</h1>
+            <%= image_tag('audi-r8.jpg', class:'carousel-image') %>
+
           </div>
 
-          <div class="item">
-            <h1>test2</h1>
+          <div class='item'>
+            <%= image_tag('wagon-mercedes.jpg', class:'carousel-image') %>
           </div>
 
-          <div class="item">
-            <h1>test3</h1>
+          <div class='item'>
+            <%= image_tag('bmw-e36.jpg', class:'carousel-image') %>
           </div>
         </div>
 
@@ -32,13 +34,36 @@
           <span class="glyphicon glyphicon-chevron-right"></span>
           <span class="sr-only">Next</span>
         </a>
-      </div> <!-- jumobtron -->
+      </div> <!-- carousel -->
+    </div> <!-- col -->
+  </div> <!-- row -->
+
+  <div class='row'> <!-- What's new -->
+    <div class='col-xs-12 col-md-12'>
+      <h1 class='wn-header'> What&#39;s New </h1>
+
+
+      <h4 class='pull-right show-more'><%= link_to 'Show More..', posts_path %></h4>
     </div> <!-- col -->
   </div> <!-- row -->
 
   <div class='row'>
     <div class='col-xs-12 col-md-12'>
+      <div>
+        <h1>Map of Local Cars and Parts </h1>
+      </div>
+      <div style='width: 100%;'>
+        <div id="map" style='width: 100%; height: 400px;'></div>
+      </div>
 
+      <script type="text/javascript">
+        let handler = Gmaps.build('Google');
+        handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+          let markers = handler.addMarkers(<%= raw posts_json(@posts).to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+        });
+      </script>
     </div> <!-- col -->
   </div> <!-- row -->
 </div> <!-- container -->

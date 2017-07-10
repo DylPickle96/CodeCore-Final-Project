@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Finalprojectdraft</title>
+    <title>Vagabond Buy and Sell</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script src="//maps.google.com/maps/api/js?key=AIzaSyCoc0Rtby_hdaDPqmUhGk4aaYEqLJ7o27Y"></script>
     <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
@@ -14,21 +18,6 @@
   </head>
 
   <body>
-    <!-- <nav>
-      <ul class="navbar">
-        <li><%= link_to('Home', home_path) %></li>
-        <li><%= link_to('Sign Up', new_user_path) %></li>
-        <li><%= link_to('Sign In', new_session_path) %></li>
-        <li><%= link_to('Sign Out', sessions_path, method: :delete) %></li>
-        <li><%= link_to('Posts', posts_path) %></li>
-        <li><%= link_to('Messages', conversations_path) %></li>
-        <li><%= link_to('Map', maps_path) %></li>
-        <% if user_signed_in? %>
-          <li><%= current_user.first_name %></li>
-        <% end %>
-      </ul>
-      <hr />
-    </nav> -->
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">

@@ -115,12 +115,31 @@
    }
  }
 
-/* carsouel styling */
+/* carousel styling */
 
-.jumbotron {
-  margin-top: 80px;
+.carousel {
+  margin-top: 75px;
+  background-color: black;
+}
+
+.carousel-image {
+  height: 50%;
+  width: 100%;
+  max-width: 100%;
+  max-height: 90%;
 }
 
 .carousel-inner {
-  height: 70vh;
+  height: 80vh;
+}
+
+/* what's new styling */
+
+.wn-header {
+  text-align: center;
+  font-family: 'Open Sans'
+}
+
+.show-more {
+  font-family: 'Open Sans'
 }
