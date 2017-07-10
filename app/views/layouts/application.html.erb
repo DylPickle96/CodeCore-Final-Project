@@ -14,7 +14,7 @@
   </head>
 
   <body>
-    <nav>
+    <!-- <nav>
       <ul class="navbar">
         <li><%= link_to('Home', home_path) %></li>
         <li><%= link_to('Sign Up', new_user_path) %></li>
@@ -28,6 +28,64 @@
         <% end %>
       </ul>
       <hr />
+    </nav> -->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div id='logo' class="navbar-header">
+
+          <%= link_to image_tag('vagabond_logo.jpg', height: 75), home_path %>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+            <i class="fa fa-bars" aria-hidden="true" id="toggle-menu"></i>
+          </button>
+
+        </div>
+
+        <div id='menu' class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="menu-element-left">
+              <%= link_to 'New Post', new_post_path %>
+            </li>
+            <li class="menu-element-left">
+              <%= link_to 'Car/Parts', posts_path %>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <li class="menu-element-right">
+                <div class="user-name">
+                  <%= current_user.first_name %>
+                </div>
+              </li>
+            <% end %>
+            <% if user_signed_in? %>
+            <li class="menu-element-right">
+              <%= link_to conversations_path do %>
+                  Messages
+              <% end %>
+            </li>
+            <% else %>
+              <li class="menu-element-right">
+                <%= link_to new_user_path do %>
+                  <i class="fa fa-user-plus" aria-hidden="true"></i>
+                <% end %>
+              </li>
+            <% end %>
+            <li class="menu-element-right">
+              <% if user_signed_in? %>
+                <%= link_to sessions_path, method: :delete do %>
+                  <i class="fa fa-sign-out" aria-hidden="true"></i>
+                <% end %>
+              <% else %>
+                <%= link_to new_session_path do %>
+                  <i class="fa fa-sign-in" aria-hidden="true"></i>
+                <% end %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+
+      </div>
     </nav>
 
     <div id="flash-message">
