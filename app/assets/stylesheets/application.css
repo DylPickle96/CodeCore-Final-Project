@@ -15,17 +15,19 @@
  *= require_tree .
  *= require_self
  */
- .messages {
-  width: 100%;
-  height: 300px;
-  overflow-y: scroll;
-}
+
  * {
    font-family: sans-serif;
  }
+
  body {
-   background-color: #E8E8E8
+   background-color: #F5F5F5;
  }
+
+ .text-align-center {
+   text-align: center;
+ }
+
  /* navbar styling */
  nav {
    background-color: #F0F0F0;
@@ -148,6 +150,21 @@
   margin-top: 10px;
 }
 
+/* maps styling */
+
+.hr-before-map {
+  border: 0;
+  height: 3px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255,140,0,0.75), rgba(0, 0, 0, 0));
+}
+
+.maps-home-header {
+  font-family: 'Anton';
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
 /* footer styling */
 
 footer div {
@@ -253,6 +270,87 @@ footer ul li {
   font-family: 'Open Sans';
   color: black;
 }
+
 .pagniation-container {
   text-align: center;
+}
+
+/* messaging styling */
+
+.messages-container {
+  position: relative;
+  top: 77px;
+}
+
+.message-container {
+  margin-bottom: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 100%;
+  height: 60px;
+}
+
+.messages {
+ width: 100%;
+ height: 350px;
+ margin-bottom: -42px;
+ overflow-y: scroll;
+ background-color: #ffffff;
+}
+
+.message-sender {
+  position: relative;
+  top: 40px;
+}
+
+.message-name {
+  padding-right: 5px;
+  font-size: 0.75em;
+}
+
+.message-body {
+  padding-left: 5px;
+  font-size: 30px;
+}
+
+.message-bar {
+  width: 90%;
+  height: 30px;
+}
+
+.user-name-header {
+  font-family: 'Anton';
+  text-align: center;
+  background-color: #ffffff;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.send {
+  width: 10%;
+  margin-left: -5px;
+}
+
+.post-overview {
+  font-family: 'Open Sans';
+  text-align: center;
+  color: #ffffff;
+  margin-left: -40px;
+}
+
+.post-overview-container {
+  border: 1px solid #222222;
+  background-color: #FF8C00;
+  box-shadow: 1px 5px 10px -5px rgba(0,0,0,0.75);
+}
+
+.post-overview-list {
+  list-style-type: none;
+  margin-left: -40px;
+}
+
+.list {
+  display: inline;
+  padding-right: 20px;
+  color: #ffffff;
 }

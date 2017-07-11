@@ -1,21 +1,29 @@
 <% messages&.each do |message| %>
   <% if message.body %>
     <% user = User.find(message.user_id) %>
-    <div>
-     <div>
-       <strong> <%= user.full_name %></strong>
-     </div>
-     <div>
-       <%= message.body %>
-     </div>
-     <% if can? :destroy, message %>
-      <%= link_to 'Delete',
-        conversation_messages_path(@conversation, message_id: message.id),
-        method: :delete,
-        remote: :true,
-        data: { confirm: 'Are you sure?' }
-      %>
-    <% end %>
-    </div>
+      <% if message.user == current_user %>
+        <div class='message-container'>
+          <h4 class='mesage-body'>
+            <i><%= message.user.first_name %></i>: <%= message.body %>
+          </h4>
+          <hr />
+        </div>
+      <% else %>
+        <div class='message-container'>
+          <h4 class='mesage-body'>
+            <i><%= message.user.first_name %></i>: <%= message.body %>
+          </h4>
+          <hr />
+        </div>
+      <% end %>
   <% end %>
 <% end %>
+
+<%# if can? :destroy, message %>
+ <%# link_to 'Delete',
+   conversation_messages_path(@conversation, message_id: message.id),
+   method: :delete,
+   remote: :true,
+   data: { confirm: 'Are you sure?' }
+ %>
+<%# end %>

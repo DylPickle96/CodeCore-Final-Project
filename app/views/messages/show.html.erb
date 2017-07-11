@@ -1,23 +1,51 @@
-<h1> Post details </h1>
+<div class='container-fluid'>
+  <div class='row messages-container'>
+    <div class='col-xs-12 col-md-12' style='width:109%; margin-left:-15px;'>
+      <div class='post-overview-container'>
+        <h1 class='post-overview'> Post Overview </h1>
+        <h3 class='post-overview'><%= @post.model_year %> <%= @post.make %> <%= @post.model %></h3>
 
-<div>
-  <div>
-    <%= @post.model_year %> <%= @post.make %> <%= @post.model %>
+        <div class='text-align-center'>
+          <ul class='post-overview-list'>
+            <li class='list'><strong>Price: </strong>$<%= @post.price %></li>
+            <li class='list'><strong>Odometer: </strong><%= @post.odometer %> KM</li>
+            <li class='list'><strong>Condition: </strong><%= @post.condition %></li>
+            <li class='list'><strong>Transmission: </strong><%= @post.transmission_type %></li>
+            <li class='list'><strong>Drivetrain: </strong><%= @post.drivetrain %></li>
+            <li class='list'><strong>Fuel Type: </strong><%= @post.fuel %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr />
+  </div> <!-- row -->
+  <div class='row'>
+    <div class='col-xs-12 col-md-10 col-md-offset-1 messages-container'>
+
+      <div class='user-name-header'>
+        <% if @conversation.recipient_id == current_user.id %>
+          <h1> <%= User.find_by(id: @conversation.sender_id).full_name %> </h1>
+        <% else %>
+          <h1> <%= User.find_by(id: @conversation.recipient_id).full_name %> </h1>
+        <% end %>
+
+      </div>
+
+      <div id="messages" class="messages">
+        <%= render "messages", messages: @messages %>
+      </div>
+
+      <div class='message-sender'>
+        <%= form_for [@conversation, @message], remote: true, html: {class: "reply-form"} do |f| %>
+          <div class="field">
+            <%= f.text_field :body, class: "message-bar", autocomplete:'off', placeholder: 'Type something...'%>
+            <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
+            <%= f.submit "Send", class: 'btn btn-warning send' %>
+          </div>
+
+        <% end %>
+      </div>
+
+    </div> <!-- col -->
   </div>
-</div>
-
-<h1> Messages </h1>
-
-<div id="messages" class="messages">
-  <%= render "messages", messages: @messages %>
-</div>
-
-  <%= form_for [@conversation, @message], remote: true, html: {class: "reply-form"} do |f| %>
-    <div class="field">
-      <%= f.text_field :body, class: "form-control", autocomplete:'off' %>
-    </div>
-      <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
-    <div>
-      <%= f.submit "Send" %>
-    </div>
-  <% end %>
+</div> <!-- container -->
