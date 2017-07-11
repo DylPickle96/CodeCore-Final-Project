@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :set_page, only: [:index]
   # page where all the posts will be shown
   def index
-    @posts = Post.search(params[:term]).paginate(:page => params[:page], :per_page => 12)
+    @posts = Post.search(params[:term]).paginate(:page => params[:page], :per_page => 9)
   end
 
   # the show page for a singular post
