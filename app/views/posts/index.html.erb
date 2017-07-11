@@ -1,15 +1,29 @@
-<h1> All Posts </h1>
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-xs-12 col-md-8 col-md-offset-2 search'>
+      <%= form_tag(posts_path, method: :get) do %>
+        <%= text_field_tag :term, params[:term], class: 'search-bar', placeholder: 'Search Posts...' %>
+        <%= submit_tag 'Search', name: nil, class:'btn btn-primary' %>
+      <% end %>
+    </div>
+    <div class='col-xs-12 col-md-12 posts-container'>
+      <% @posts.each do |post| %>
+        <%= link_to "#{post.model_year} #{post.make} #{post.model}", post_path(post) %>
 
-<%= link_to('New Post', new_post_path) %><br />
-<br />
-<br />
+        <hr />
+      <% end %>
+    </div>
+  </div>
 
-<%= form_tag(posts_path, method: :get) do %>
-  <%= text_field_tag :term, params[:term], placeholder: 'Search Posts...' %>
-  <%= submit_tag 'Search', name: nil %>
-<% end %>
+  <div class='pagniation-container'>
+    <div class='pages'>
+      <%= will_paginate @posts %>
+    </div>
+  </div>
 
-<% @posts.each do |post| %>
-  <%= link_to "#{post.model_year} #{post.make} #{post.model}", post_path(post) %>
-  <hr />
-<% end %>
+  <div class='row'>
+    <div class='col-xs-12 col-md-12'>
+      <%= render '/layouts/footer.html.erb' %>
+    </div>
+  </div>
+</div>

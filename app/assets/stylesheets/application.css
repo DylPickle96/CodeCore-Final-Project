@@ -23,6 +23,9 @@
  * {
    font-family: sans-serif;
  }
+ body {
+   background-color: #E8E8E8
+ }
  /* navbar styling */
  nav {
    background-color: rgb(240,240,240);
@@ -32,14 +35,17 @@
  #menu {
    background: inherit;
  }
+
  #toggle-menu {
    font-size: 30px;
    position: relative;
    top: 5px;
  }
+
  nav ul li a {
    font-size: 25px;
  }
+
 .user-name {
   font-size: 25px;
   text-align: left;
@@ -54,15 +60,13 @@
     top: 15px;
     left: 30px;
   }
+
   .menu-element-right {
     position: relative;
     top: 15px;
     right: 30px;
   }
-  .blog-images {
-    max-height: 250px;
-    max-width: 325px;
-  }
+
   .user-name {
     font-size: 25px;
     position: relative;
@@ -123,7 +127,7 @@
 }
 
 .carousel-image {
-  height: 50%;
+  height: 80vh;
   width: 100%;
   max-width: 100%;
   max-height: 90%;
@@ -142,4 +146,81 @@
 
 .show-more {
   font-family: 'Open Sans'
+}
+
+/* footer styling */
+
+footer div {
+  text-align: center;
+}
+
+footer ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.unordered-container {
+  position: relative;
+  top: 30px;
+  right: 15px;
+}
+
+.footer {
+  min-width: 100%;
+  min-height: 130px;
+  background-color: #222222;
+}
+
+.footer-icon-container {
+  text-align: center;
+  background-color: #FFFFFF;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  margin-right: 10px;
+}
+
+.footer-icon {
+  position: relative;
+  top: 5px;
+  color: #222222;
+  font-size: 20px;
+}
+
+.footer-text {
+  color: #FFFFFF;
+  padding-left: 2em;
+}
+
+/* posts show styling */
+
+.search {
+  margin-top: 90px;
+}
+
+.search-bar {
+  width: 90%;
+  height: 35px;
+}
+
+.search-icon {
+  background-color: #ffffff;
+}
+
+.posts-container {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.pages {
+  padding: 5px;
+  font-size: 2em;
+}
+
+.pages > div > a {
+  font-family: 'Open Sans';
+  color: black;
+}
+.pagniation-container {
+  text-align: center;
 }
