@@ -136,12 +136,16 @@
 /* what's new styling */
 
 .wn-header {
+  margin-top: 30px;
   text-align: center;
-  font-family: 'Open Sans'
+  font-family: 'Anton';
 }
 
-.show-more {
-  font-family: 'Open Sans'
+.show-more > a {
+  font-family: 'Open Sans';
+  color: #FF8C00;
+  margin-right: 10px;
+  margin-top: 10px;
 }
 
 /* footer styling */
