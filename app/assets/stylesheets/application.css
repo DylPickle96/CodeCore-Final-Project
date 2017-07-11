@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require bootstrap_and_overrides
+ *= require font_awesome
  *= require_tree .
  *= require_self
  */
@@ -19,7 +20,239 @@
   height: 300px;
   overflow-y: scroll;
 }
- .navbar > li {
-   display: inline;
-   padding-right: 10px;
+ * {
+   font-family: sans-serif;
  }
+ body {
+   background-color: #E8E8E8
+ }
+ /* navbar styling */
+ nav {
+   background-color: #F0F0F0;
+ }
+
+ #menu {
+   background: inherit;
+ }
+
+ #toggle-menu {
+   font-size: 30px;
+ }
+
+ nav ul li a {
+   font-size: 25px;
+ }
+
+.user-name {
+  font-size: 25px;
+  text-align: left;
+  padding-left: 15px;
+  color: #9d9d9d;
+}
+/* this query removes the styling on the li elements below a 992px */
+@media (min-width: 992px) {
+
+  .menu-element-left {
+    position: relative;
+    top: 15px;
+    left: 30px;
+  }
+
+  .menu-element-right {
+    position: relative;
+    top: 15px;
+    right: 30px;
+  }
+
+  .user-name {
+    font-size: 25px;
+    position: relative;
+    top: 7px;
+    padding-left: 5px;
+    padding-right: -25px;
+  }
+}
+ /* media  query to collapse the navbar sooner than the default 768px otherwise our navbar begins to mash together */
+ @media (max-width: 992px) {
+     .navbar-header {
+         float: none;
+     }
+     .navbar-left,.navbar-right {
+         float: none !important;
+     }
+     .navbar-toggle {
+         display: block;
+     }
+     .navbar-collapse {
+         border-top: 1px solid transparent;
+         box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+     }
+     .navbar-fixed-top {
+         top: 0;
+         border-width: 0 0 1px;
+     }
+     .navbar-collapse.collapse {
+         display: none!important;
+     }
+     .navbar-nav {
+         float: none!important;
+         margin-top: 7.5px;
+     }
+     .navbar-nav>li {
+         float: none;
+     }
+     .navbar-nav>li>a {
+         padding-top: 10px;
+         padding-bottom: 10px;
+     }
+     .collapse.in{
+         display:block !important;
+     }
+     .input-group .form-control {
+     position: relative;
+     z-index: 2;
+     float: left;
+     width: 100%;
+   }
+ }
+
+/* carousel styling */
+
+.carousel {
+  margin-top: 75px;
+  background-color: black;
+}
+
+.carousel-image {
+  height: 80%;
+  width: 100%;
+  max-width: 100%;
+}
+
+.carousel-inner {
+  height: 80%;
+}
+
+/* what's new styling */
+
+.wn-header {
+  margin-top: 30px;
+  text-align: center;
+  font-family: 'Anton';
+}
+
+.show-more > a {
+  font-family: 'Open Sans';
+  color: #FF8C00;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+/* footer styling */
+
+footer div {
+  text-align: center;
+}
+
+footer ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.unordered-container {
+  position: relative;
+  top: 30px;
+  right: 15px;
+}
+
+.footer {
+  min-width: 100%;
+  min-height: 130px;
+  background-color: #222222;
+}
+
+.footer-icon-container {
+  text-align: center;
+  background-color: #FFFFFF;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  margin-right: 10px;
+}
+
+.footer-icon {
+  position: relative;
+  top: 5px;
+  color: #222222;
+  font-size: 20px;
+}
+
+.footer-text {
+  color: #FFFFFF;
+  padding-left: 2em;
+}
+
+/* posts show styling */
+
+.search {
+  margin-top: 90px;
+}
+
+.search-bar {
+  width: 90%;
+  height: 35px;
+}
+
+.search-icon {
+  background-color: #ffffff;
+}
+
+.btn-warning {
+  background-color: #FF8C00;
+}
+.posts-container {
+  max-width: 32vw;
+  height: 350px;
+  width: 100%;
+  margin-top: 20px;
+  margin-right: 5px;
+  margin-left: 10px;
+  text-align: center;
+  background-color: #222222;
+  box-shadow: 1px 5px 10px -5px rgba(0,0,0,0.75);
+}
+
+@media (max-width: 992px) {
+  .posts-container {
+    max-width: 100vw;
+    margin-left: 0px;
+  }
+}
+
+.post-header {
+  font-family: 'Open Sans';
+  color: #F0F0F0;
+  width: 100%;
+}
+
+.post-header > h3 > a {
+  color: #FF8C00;
+}
+
+.post-price {
+  margin-top: 10px;
+
+}
+
+.pages {
+  padding: 5px;
+  font-size: 2em;
+}
+
+.pages > div > a {
+  font-family: 'Open Sans';
+  color: black;
+}
+.pagniation-container {
+  text-align: center;
+}

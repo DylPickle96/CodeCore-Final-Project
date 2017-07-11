@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   before_action :find_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_page, only: [:index]
   # page where all the posts will be shown
   def index
-    @posts = Post.search(params[:term])
+    @posts = Post.search(params[:term]).paginate(:page => params[:page], :per_page => 9)
   end
 
   # the show page for a singular post
@@ -75,5 +76,9 @@ class PostsController < ApplicationController
 
   def find_post
     @post = Post.find(params[:id])
+  end
+
+  def set_page
+    @page = params[:page] || 0
   end
 end

@@ -1,15 +1,40 @@
-<h1> All Posts </h1>
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-xs-12 col-md-8 col-md-offset-2 search'>
+      <%= form_tag(posts_path, method: :get) do %>
+        <%= text_field_tag :term, params[:term], class: 'search-bar', placeholder: 'Search Posts...' %>
+        <%= submit_tag 'Search', name: nil, class:'btn btn-warning' %>
+      <% end %>
+    </div>
 
-<%= link_to('New Post', new_post_path) %><br />
-<br />
-<br />
+    <% @posts.each do |post| %>
+      <div class='col-xs-12 col-md-4 posts-container'>
+        <div class='post-header'>
+          <h3><%= link_to "#{post.model_year} #{post.make} #{post.model}", post_path(post) %></h3>
+          <h5><%= post.address %></h5>
+        </div>
+        <hr style='color:black;'/>
+        <div>
+          <%= link_to image_tag post.image.url(:default), post_path(post) if post.image.present? %>
+          <%= link_to image_tag('placeholder.jpg', height: 200), post_path(post) if post.image.present? == false %>
+        </div>
+        <div class='post-header'>
+          <p class='post-price'>$<%= post.price %></p>
+        </div>
+      </div>
+    <% end %>
 
-<%= form_tag(posts_path, method: :get) do %>
-  <%= text_field_tag :term, params[:term], placeholder: 'Search Posts...' %>
-  <%= submit_tag 'Search', name: nil %>
-<% end %>
+  </div>
 
-<% @posts.each do |post| %>
-  <%= link_to "#{post.model_year} #{post.make} #{post.model}", post_path(post) %>
-  <hr />
-<% end %>
+  <div class='pagniation-container'>
+    <div class='pages'>
+      <%= will_paginate @posts %>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class='col-xs-12 col-md-12'>
+      <%= render '/layouts/footer.html.erb' %>
+    </div>
+  </div>
+</div>
