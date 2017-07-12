@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170708191101) do
+ActiveRecord::Schema.define(version: 20170712184745) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20170708191101) do
     t.float "longitude"
     t.string "image"
     t.bigint "user_id"
+    t.string "imageurl", default: "placeholder.jpg"
     t.index ["condition"], name: "index_posts_on_condition"
     t.index ["cylinders"], name: "index_posts_on_cylinders"
     t.index ["drivetrain"], name: "index_posts_on_drivetrain"
@@ -76,6 +77,7 @@ ActiveRecord::Schema.define(version: 20170708191101) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
   end
 
   add_foreign_key "conversations", "posts"

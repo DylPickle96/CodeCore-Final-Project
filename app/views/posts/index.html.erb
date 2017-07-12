@@ -16,7 +16,7 @@
         <hr style='color:black;'/>
         <div>
           <%= link_to image_tag post.image.url(:default), post_path(post) if post.image.present? %>
-          <%= link_to image_tag('placeholder.jpg', height: 200), post_path(post) if post.image.present? == false %>
+          <%= link_to image_tag(post.imageurl, height: 200), post_path(post) if post.image.present? == false %>
         </div>
         <div class='post-header'>
           <p class='post-price'>$<%= post.price %></p>

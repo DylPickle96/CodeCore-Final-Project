@@ -7,7 +7,22 @@ User.create([
   ])
 
 Post.create([
-{make: 'BMW', model: '328i', odometer: 320_000, price: 5000.00, model_year: 1996, condition: 'Used', cylinders: 6, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Blue', title_status: 'Clean', transmission_type: 'Manual', user_id: 1},
+{
+  make: 'BMW',
+  model: '328i',
+  odometer: 320_000,
+  price: 5000.00,
+  model_year: 1996,
+  condition: 'Used',
+  cylinders: 6,
+  drivetrain: 'RWD',
+  fuel: 'Gas',
+  paint_colour: 'Blue',
+  title_status: 'Clean',
+  transmission_type: 'Manual',
+  user_id: 1,
+  imageurl: 'my-car.jpg',
+},
 {make: 'BMW', model: 'M3', odometer: 100_000, price: 35000.00, model_year: 2010, condition: 'Used', cylinders: 8, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Blue', title_status: 'Clean', transmission_type: 'Automatic', user_id: 1},
 {make: 'Porsche', model: 'Panamera', odometer: 0, price: 150000.00, model_year: 2016, condition: 'New', cylinders: 8, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'White', title_status: 'Clean', transmission_type: 'Dual-Clutch Automatic', user_id: 2},
 {make: 'Lamborghini', model: 'Huracan', odometer: 5000, price: 300000.00, model_year: 2016, condition: 'New', cylinders: 10, drivetrain: 'AWD', fuel: 'Gas', paint_colour: 'Gold', title_status: 'Clean', transmission_type: 'Dual-Clutch Automatic', user_id: 2},

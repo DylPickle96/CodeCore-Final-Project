@@ -11,6 +11,12 @@ class SendMessageJob < ApplicationJob
 
   def render_message(message)
     @user = User.find_by(id: message.user_id)
-    ApplicationController.renderer.render(partial: 'messages/message', locals: {body: message.body, user: @user })
+    ApplicationController.renderer.render(
+                                          partial: 'messages/message',
+                                          locals:
+                                          {
+                                            body: message.body,
+                                            user: @user
+                                          })
   end
 end
