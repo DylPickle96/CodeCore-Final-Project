@@ -1,47 +1,95 @@
-<hr />
-<hr />
-<hr />
-<%= "#{@post.model_year} #{@post.make} #{@post.model}" %>
+<div class='container-fluid'>
+  <div class='row post-show-container'>
+    <div class='post-header-container'>
+      <h1 class='post-title'><%= "#{@post.model_year} #{@post.make} #{@post.model}" %></h1>
+      <h3 class='post-price'><%= "$""#{@post.price}" %></h3>
+    </div>
 
-<p>
-  <% if can? :edit, @post %>
-    <%= link_to 'Edit Post', edit_post_path(@post) %>
-  <% end %>
-  <% if can? :destroy, @post %>
-    <%= link_to 'Delete Post',
-      post_path(@post),
-      method: :delete,
-      data: { confirm: 'Are you sure you want to delete this?' } %>
-  <% end %>
-</p>
-<p>
-  Posted By: <strong><%= @post.user.first_name %></strong>
-</p>
+    <div class='col-xs-12 col-md-6 post-image-container'>
 
-<% if @post.user.id != current_user.id %>
-  <div class="item">
-  <%= link_to 'Message User', conversations_path(post_id: @post.id, sender_id: current_user.id, recipient_id: @post.user.id), method: 'post'%>
+        <% if @post.image.present? %>
+          <%= image_tag @post.image.url(:default) %>
+        <% else %>
+          <%= image_tag @post.imageurl, class: 'post-image' %>
+        <% end %>
+        <div class='editor'>
+          <p>
+            <% if can? :edit, @post %>
+              <%= link_to 'Edit Post', edit_post_path(@post), style: 'color:black;' %>
+            <% end %>
+            <% if can? :destroy, @post %>
+              <%= link_to 'Delete Post',
+                post_path(@post),
+                method: :delete,
+                data: { confirm: 'Are you sure you want to delete this?' },
+                style: 'color:black;' %>
+            <% end %>
+          </p>
+          <p>
+            Posted By: <strong><%= @post.user.full_name %></strong>
+          </p>
+        </div>
+
+    </div>
+    <div class='col-xs-12 col-md-6 post-map-container'>
+      <div style='width: 100%;'>
+        <div id="map" class='post-show-map'></div>
+      </div>
+
+      <script>
+        let handler = Gmaps.build('Google');
+        handler.buildMap({ internal: {id: 'map'}}, function(){
+          const markers = handler.addMarkers([
+            {
+              lat: <%= @post.latitude %>,
+              lng: <%= @post.longitude %>,
+              infowindow: "<%= @post.model_year %> <%= @post.make %> <%= @post.model %>"
+            }
+          ]);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+          handler.getMap().setZoom(12);
+        });
+      </script>
+    </div>
   </div>
-<% end %>
 
-<%= image_tag @post.image.url(:default) if @post.image.present? %>
+  <hr class='hr-after-map'/>
+  <h1 class='spec-title'> Specifications </h1>
 
-<div style='width: 400px;'>
-  <div id="map" style='width: 400px; height: 300px;'></div>
+    <div class='row spec-container'>
+      <div class='col-xs-4 col-md-4'>
+        <ul class='spec-list'>
+          <li class='spec'><strong>Price: </strong>$<%= @post.price %></li>
+          <li class='spec'><strong>Odometer:</strong> <%= @post.odometer %> KM</li>
+          <li class='spec'><strong>Condition:</strong> <%= @post.condition %></li>
+        </ul>
+      </div>
+      <div class='col-xs-4 col-md-4 verticalLine'>
+        <ul class='spec-list'>
+          <li class='spec'><strong>Cylinders:</strong> <%= @post.cylinders %></li>
+          <li class='spec'><strong>Drivetrain:</strong> <%= @post.drivetrain %></li>
+          <li class='spec'><strong>Fuel Type:</strong> <%= @post.fuel %></li>
+        </ul>
+      </div>
+      <div class='col-xs-4 col-md-4 verticalLine'>
+        <ul class='spec-list'>
+          <li class='spec'><strong>Transmission Type:</strong> <%= @post.transmission_type %></li>
+          <li class='spec'><strong>Paint Colour:</strong> <%= @post.paint_colour %></li>
+          <li class='spec'><strong>Title Status:</strong> <%= @post.title_status %></li>
+        </ul>
+      </div>
+    </div>
+
+
+  <div class='row'>
+    <div class='col-xs-12 col-md-12 text-align-center'>
+      <% if @post.user.id != current_user.id %>
+        <div>
+        <%= link_to 'Message User', conversations_path(post_id: @post.id, sender_id: current_user.id, recipient_id: @post.user.id), method: 'post', class: 'btn btn-warning message-user-button'%>
+        </div>
+      <% end %>
+      <%= render '/layouts/footer.html.erb' %>
+    </div>
+  </div>
 </div>
-
-<script>
-  let handler = Gmaps.build('Google');
-  handler.buildMap({ internal: {id: 'map'}}, function(){
-    const markers = handler.addMarkers([
-      {
-        lat: <%= @post.latitude %>,
-        lng: <%= @post.longitude %>,
-        infowindow: "<%= @post.model_year %> <%= @post.make %> <%= @post.model %>"
-      }
-    ]);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-    handler.getMap().setZoom(12);
-  });
-</script>

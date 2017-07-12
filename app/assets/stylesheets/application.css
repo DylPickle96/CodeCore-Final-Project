@@ -28,6 +28,10 @@
    text-align: center;
  }
 
+ .verticalLine {
+   border-left: 2px dashed black;
+ }
+
  /* navbar styling */
  nav {
    background-color: #F0F0F0;
@@ -156,6 +160,13 @@
   border: 0;
   height: 3px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255,140,0,0.75), rgba(0, 0, 0, 0));
+}
+
+.hr-after-map {
+  border: 0;
+  height: 3px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255,140,0,0.75), rgba(0, 0, 0, 0));
+  margin-top: 7%;
 }
 
 .maps-home-header {
@@ -353,4 +364,97 @@ footer ul li {
   display: inline;
   padding-right: 20px;
   color: #ffffff;
+}
+
+/* post show styling */
+
+.post-header-container {
+  background-color: #FF8C00;
+  box-shadow: 1px 5px 10px -5px rgba(0,0,0,0.75);
+  padding: 1%;
+  margin-bottom: 5%;
+}
+
+.post-show-container {
+  margin-top: 76px;
+}
+
+.post-image-container {
+  height: 300px;
+  margin-bottom: 2%;
+  position: relative;
+  left: 35px;
+}
+
+.post-map-container {
+  position: relative;
+  right: 35px;
+}
+
+.post-title {
+  font-family: 'Open Sans';
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+}
+
+.post-price {
+  margin-bottom: 3%;
+  color: #ffffff;
+  text-align: center;
+}
+.post-image {
+  max-width: 100%;
+  max-height: 100%;
+  text-align: center;
+  box-shadow: 10px 10px 50px -15px rgba(0,0,0,1);
+  background-color: #F5F5F5;
+}
+.post-show-map {
+  width: 100%;
+  height: 300px;
+  border: 5px solid black;
+  border-radius: 5px;
+}
+
+.message-user-button {
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  width: 15%;
+}
+
+.editor {
+  margin-top: 2%;
+}
+
+.spec-title {
+  margin-top: 3%;
+  font-family: 'Anton';
+  text-align: center;
+  margin-bottom: 3%;
+}
+
+.spec-container {
+  height: 300px;
+  background-color: #ffffff;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  border: 2px dashed black;
+}
+
+.spec-list {
+  text-align: center;
+  list-style-type: none;
+  height: 235px;
+  padding-left: 0;
+}
+
+.spec {
+  margin-top: 13%;
+  border: 1px solid black;
+  box-shadow: 10px 10px 20px -10px rgba(0,0,0,0.75);
+  border-radius: 15px;
+  padding: 2%;
+  font-size: 1em;
 }

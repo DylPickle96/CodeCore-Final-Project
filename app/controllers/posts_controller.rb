@@ -70,7 +70,8 @@ class PostsController < ApplicationController
       :title_status,
       :transmission_type,
       :image,
-      :term
+      :term,
+      :imageurl
       ])
   end
 
