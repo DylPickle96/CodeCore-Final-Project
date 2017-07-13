@@ -34,7 +34,7 @@
 
  /* navbar styling */
  nav {
-   background-color: #F0F0F0;
+   background-color: #222222;
  }
 
 .navbar {
@@ -46,7 +46,7 @@
 }
 
  #menu {
-   background: inherit;
+   background: #222222;
  }
 
  #toggle-menu {
