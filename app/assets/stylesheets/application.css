@@ -37,6 +37,14 @@
    background-color: #F0F0F0;
  }
 
+.navbar {
+  height: 75px;
+}
+
+.logo {
+  padding-top: 5px;
+}
+
  #menu {
    background: inherit;
  }
