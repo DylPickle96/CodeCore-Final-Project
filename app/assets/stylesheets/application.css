@@ -458,3 +458,65 @@ footer ul li {
   padding: 2%;
   font-size: 1em;
 }
+
+/* form styling */
+
+.form-margin-container {
+  margin-top: 76px;
+}
+
+.form-container {
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 20px;
+  padding-top: 2%;
+  margin-top: 1%;
+  margin-bottom: 3%;
+}
+
+.form-group {
+  margin-bottom: 5%;
+}
+
+.post-control {
+  width: 80%;
+}
+
+.new-post-title {
+  font-family: 'Anton';
+  font-weight: bold;
+  text-align: center;
+}
+
+.new-post-submit {
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.login-container {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 20px;
+  padding: 3%;
+  text-align: center;
+}
+
+.login-header {
+  font-family: 'Open Sans';
+  font-weight: bold;
+  text-align: center;
+  color: #FF8C00;
+}
+
+.login-button {
+  width: 100%;
+  margin-top: 2%;
+}
+
+.login-background {
+  background-image: url(/assets/login-background.jpg);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
