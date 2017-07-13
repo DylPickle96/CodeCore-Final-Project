@@ -54,7 +54,7 @@
             <h3><%= link_to "#{post.model_year} #{post.make} #{post.model}", post_path(post) %></h3>
             <h5><%= post.address %></h5>
           </div>
-          <hr style='color:black;'/>
+          <hr />
           <div>
             <%= link_to image_tag post.image.url(:default), post_path(post) if post.image.present? %>
             <%= link_to image_tag('placeholder.jpg', height: 200), post_path(post) if post.image.present? == false %>
@@ -87,6 +87,35 @@
         });
       </script>
     </div> <!-- col -->
+    <div class='hidden-xs hiden-sm col-md-6'>
+      <h1 class='forum-home-header '>Recent Forum Posts</h1>
+    </div>
+    <div class='hidden-xs hiden-sm col-md-6 forum-posts-container'>
+      <div class='forum-post-inner'>
+        <div class='col-xs-12 col-md-12'>
+          <div class='first-forum-post'>
+            <h4 class='forum-text text-align-center'><a href='#'>Anyone know where I can find an MK2 Supra</a></h4>
+            <p class='forum-paragraph'>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <hr class='forum-ruler'/>
+          <div>
+            <h4 class='forum-text text-align-center'><a href='#'> What local cars are for sale around $10000</a></h4>
+            <p class='forum-paragraph'>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <hr class='forum-ruler'/>
+          <div>
+            <h4 class='forum-text text-align-center'><a href='#'>The 240sx Yay or Nay?</a></h4>
+            <p class='forum-paragraph'>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div> <!-- row -->
 
   <div class='row'>

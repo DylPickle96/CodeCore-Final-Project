@@ -16,3 +16,15 @@
 //= require gmaps/google
 //= require rails-ujs
 //= require_tree .
+
+function openNav() {
+  document.getElementById("slider-conversation").style.width = "200px";
+}
+
+function closeNav() {
+  document.getElementById("slider-conversation").style.width = "0";
+}
+
+setTimeout(function() {
+  $('#flash-message').fadeOut('fast');
+}, 3000);
