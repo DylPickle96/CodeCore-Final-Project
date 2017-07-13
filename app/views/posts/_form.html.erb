@@ -1,57 +1,151 @@
 <%= form_for @post do |f| %>
-  <div>
-    <%= f.label :make %><br />
-    <%= f.text_field :make %>
+  <div class='col-xs-12 col-md-4 col-md-offset-2'>
+    <div class='form-group'>
+      <%= f.label :make %>
+      <div class='input-group'>
+        <span class='input-group-addon'>
+          <i class="fa fa-car" aria-hidden="true"></i>
+        </span>
+        <%= f.text_field :make, class: 'form-control', placeholder: 'Make' %>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <%= f.label :model %>
+      <div class='input-group'>
+        <span class='input-group-addon'>
+          <i class="fa fa-car" aria-hidden="true"></i>
+        </span>
+        <%= f.text_field :model, class: 'form-control', placeholder: 'Model' %>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <%= f.label :odometer %>
+      <div class='input-group'>
+        <span class='input-group-addon'>
+          <i class="fa fa-compass" aria-hidden="true"></i>
+        </span>
+        <%= f.text_field :odometer, class: 'form-control', placeholder: 'Odometer' %>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <%= f.label :price %>
+      <div class='input-group'>
+        <span class='input-group-addon'>
+          <i class="fa fa-usd" aria-hidden="true"></i>
+        </span>
+        <%= f.text_field :price, class: 'form-control', placeholder: 'Price' %>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <%= f.label :model_year %>
+      <div class='input-group'>
+        <span class='input-group-addon'>
+          <i class="fa fa-calendar" aria-hidden="true"></i>
+        </span>
+        <%= f.text_field :model_year, class: 'form-control', placeholder: 'Model Year' %>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <%= f.label :condition %>
+      <div class='input-group'>
+        <span class='input-group-addon'>
+          <i class="fa fa-car" aria-hidden="true"></i>
+        </span>
+        <%= f.text_field :condition, class: 'form-control', placeholder: 'Condition' %>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <%= f.label :address %>
+      <div class='input-group'>
+        <span class='input-group-addon'>
+          <i class="fa fa-home" aria-hidden="true"></i>
+        </span>
+        <%= f.text_field :address, class: 'form-control', placeholder: 'Address' %>
+      </div>
+    </div>
+
   </div>
-  <div>
-    <%= f.label :model %><br />
-    <%= f.text_field :model %>
+
+  <div class='col-xs-12 col-md-4'>
+    <div class='form-group'>
+      <%= f.label :cylinders %>
+      <div class='input-group'>
+        <span class='input-group-addon'>
+          <i class="fa fa-car" aria-hidden="true"></i>
+        </span>
+        <%= f.text_field :cylinders, class: 'form-control', placeholder: 'Cylinders' %>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <%= f.label :drivetrain %>
+      <div class='input-group'>
+        <span class='input-group-addon'>
+          <i class="fa fa-cogs" aria-hidden="true"></i>
+        </span>
+        <%= f.text_field :drivetrain, class: 'form-control', placeholder: 'Drivetrain' %>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <%= f.label :fuel %>
+      <div class='input-group'>
+        <span class='input-group-addon'>
+          <i class="fa fa-fire" aria-hidden="true"></i>
+        </span>
+        <%= f.text_field :fuel, class: 'form-control', placeholder: 'Fuel Type' %>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <%= f.label :paint_colour %>
+      <div class='input-group'>
+        <span class='input-group-addon'>
+          <i class="fa fa-car" aria-hidden="true"></i>
+        </span>
+        <%= f.text_field :paint_colour, class: 'form-control', placeholder: 'Paint Colour' %>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <%= f.label :title_status %>
+      <div class='input-group'>
+        <span class='input-group-addon'>
+          <i class="fa fa-car" aria-hidden="true"></i>
+        </span>
+        <%= f.text_field :title_status, class: 'form-control', placeholder: 'Title Status' %>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <%= f.label :transmission_type %>
+      <div class='input-group'>
+        <span class='input-group-addon'>
+          <i class="fa fa-cogs" aria-hidden="true"></i>
+        </span>
+        <%= f.text_field :transmission_type, class: 'form-control', placeholder: 'Transmission' %>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+      <%= f.hidden_field :image_cache %>
+    </div>
+
   </div>
-  <div>
-    <%= f.label :odometer %><br />
-    <%= f.text_field :odometer %>
+
+  <div class='col-xs-12 col-md-12'>
+
+    <div>
+      <%= f.submit class: 'btn btn-warning new-post-submit' %>
+    </div>
   </div>
-  <div>
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
-  </div>
-  <div>
-    <%= f.label :model_year %><br />
-    <%= f.text_field :model_year %>
-  </div>
-  <div>
-    <%= f.label :condition %><br />
-    <%= f.text_field :condition %>
-  </div>
-  <div>
-    <%= f.label :cylinders %><br />
-    <%= f.text_field :cylinders %>
-  </div>
-  <div>
-    <%= f.label :drivetrain %><br />
-    <%= f.text_field :drivetrain %>
-  </div>
-  <div>
-    <%= f.label :fuel %><br />
-    <%= f.text_field :fuel %>
-  </div>
-  <div>
-    <%= f.label :paint_colour %><br />
-    <%= f.text_field :paint_colour %>
-  </div>
-  <div>
-    <%= f.label :title_status %><br />
-    <%= f.text_field :title_status %>
-  </div>
-  <div>
-    <%= f.label :transmission_type %><br />
-    <%= f.text_field :transmission_type %>
-  </div>
-  <div>
-    <%= f.file_field :image %>
-    <%= f.hidden_field :image_cache %>
-  </div>
-  <div>
-    <%= f.submit %>
-  </div>
+
 <% end %>

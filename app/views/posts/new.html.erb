@@ -1,3 +1,16 @@
-<h1> New Post </h1>
+<div class='container-fluid'>
+  <div class='row form-margin-container'>
+    <h1 class='new-post-title'> New Post </h1>
+    <hr style='border-top: 1px solid black;' />
 
-<%= render 'form' %>
+    <div class='col-md-8 col-md-offset-2 form-container'>
+      <%= render 'form' %>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class='col-xs-12 col-md-12'>
+      <%= render '/layouts/footer.html.erb' %>
+    </div>
+  </div>
+</div>
