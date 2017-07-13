@@ -50,9 +50,10 @@
             <% end %>
             <% if user_signed_in? %>
             <li class="menu-element-right">
-              <%= link_to conversations_path do %>
+              <!-- <%= link_to conversations_path do %>
                   Messages
-              <% end %>
+              <% end %> -->
+              <a href="javascript:void(0)" onclick="openNav()">Messages</a>
             </li>
             <% else %>
               <li class="menu-element-right">
@@ -78,6 +79,37 @@
       </div>
     </nav>
 
+    <div id='slider-conversation' class='slide-conv'>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+      <h4 class='conversation-title'> Your Conversations </h4>
+      <hr style='border-top: 1px solid #818181;' />
+      <% @conversations_slider = Conversation.all %>
+
+      <% @conversations_slider.each do |conversation| %>
+        <div>
+          <% if conversation.sender_id == current_user.id || conversation.recipient_id == current_user.id %>
+            <% if conversation.sender_id == current_user.id %>
+              <% recipient = User.find(conversation.recipient_id) %>
+            <% else %>
+              <% recipient = User.find(conversation.sender_id) %>
+            <% end %>
+            <%= link_to recipient.full_name, conversation_messages_path(conversation)%>
+          <% end %>
+          <hr style='border-top: 1px solid #818181; width: 40%;' />
+        </div>
+      <% end %>
+    </div>
+
+    <script>
+      function openNav() {
+        document.getElementById("slider-conversation").style.width = "200px";
+      }
+
+      function closeNav() {
+        document.getElementById("slider-conversation").style.width = "0";
+      }
+    </script>
     <!-- <div id="flash-message">
       <% if flash[:notice] %>
         <div class='alert alert-success'><%= flash[:notice] %></div>

@@ -493,6 +493,8 @@ footer ul li {
   margin-bottom: 3%;
 }
 
+/* login page styling */
+
 .login-container {
   margin-top: 10%;
   margin-bottom: 10%;
@@ -519,4 +521,47 @@ footer ul li {
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+/* slider styling */
+
+.slide-conv {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 16;
+  top: 0;
+  right: 0;
+  background-color: #222222;
+  overflow-x: hidden;
+  padding-top: 140px;
+  transition: 0.5s;
+  text-align: center;
+}
+
+.slide-conv a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.slide-conv .closebtn {
+    padding-top: 80px;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.conversation-title {
+  color: #818181;
+}
+
+@media screen and (max-height: 450px) {
+    .slide-conv {padding-top: 15px;}
+    .slide-conv a {font-size: 18px;}
 }
