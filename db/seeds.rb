@@ -25,7 +25,7 @@ Post.create([
 },
 {make: 'BMW', model: 'M3', odometer: 100_000, price: 35000.00, model_year: 2010, condition: 'Used', cylinders: 8, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Blue', title_status: 'Clean', transmission_type: 'Automatic', user_id: 1,
 imageurl: '2010-m3.jpg'},
-{make: 'Porsche', model: 'Panamera', odometer: 0, price: 150000.00, model_year: 2016, condition: 'New', cylinders: 8, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'White', title_status: 'Clean', transmission_type: 'Dual-Clutch Automatic', user_id: 2, imageurl: '2016-Panamera.jpeg' },
+{make: 'Porsche', model: 'Panamera', odometer: 0, price: 150000.00, model_year: 2016, condition: 'New', cylinders: 8, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'White', title_status: 'Clean', transmission_type: 'Dual-Clutch Automatic', user_id: 2, imageurl: '2016-Panamera.jpg' },
 {make: 'Lamborghini', model: 'Huracan', odometer: 5000, price: 300000.00, model_year: 2016, condition: 'New', cylinders: 10, drivetrain: 'AWD', fuel: 'Gas', paint_colour: 'Gold', title_status: 'Clean', transmission_type: 'Dual-Clutch Automatic', user_id: 2, imageurl: '2016-hurcan.jpg'},
 {make: 'Nissan', model: 'Skyline GT-R', odometer: 20000, price: 20000.00, model_year: 1999, condition: 'Used', cylinders: 6, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Gold', title_status: 'Clean', transmission_type: 'Manual', user_id: 1, imageurl: '1999_Nissan_Skyline_R34.jpg'},
 {make: 'BMW', model: 'M5', odometer: 150000, price: 20000.00, model_year: 2000, condition: 'Used', cylinders: 8, drivetrain: 'RWD', fuel: 'Gas', paint_colour: 'Blue', title_status: 'Clean', transmission_type: 'Manual', user_id: 3, imageurl: 'bmw_m5.jpg'},
