@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://localhost:6379/1
+  url: redis://redistogo:e6368544b4ec4f9b8a3fc6e0394f47df@angelfish.redistogo.com:10635/
   channel_prefix: vagabond_buy_and_sell_production
