@@ -1,3 +1,5 @@
+console.log(<%= Conversation.all.length %>);
+
 <% Conversation.all.each do |conversation| %>
 
   App['room' + <%= conversation.id %>] = App.cable.subscriptions.create(
