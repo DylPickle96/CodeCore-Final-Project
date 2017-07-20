@@ -1,3 +1,10 @@
+<script>
+  $(document).ready(function() {
+    $(document).trigger("conversationLoad", [<%= @conversation.id %>]);
+  });
+</script>
+
+
 <div class='container-fluid'>
   <div class='row messages-container'>
     <div class='col-xs-12 col-md-12' style='width:109%; margin-left:-15px;'>

@@ -1,11 +1,8 @@
-console.log(<%= Conversation.all.length %>);
-
-<% Conversation.all.each do |conversation| %>
-
-  App['room' + <%= conversation.id %>] = App.cable.subscriptions.create(
+$(document).on('conversationLoad', function(event, id) {
+  App['room' + id] = App.cable.subscriptions.create(
     {
       channel: "ConversationChannel",
-      room: <%= conversation.id %>
+      room: id
     }, {
       connected: function() {
         scroll_bottom();
@@ -24,7 +21,9 @@ console.log(<%= Conversation.all.length %>);
       }
     }
   );
-<% end %>
+});
+
+
 
 function scroll_bottom() {
   $('#messages').scrollTop($('#messages')[0].scrollHeight)
