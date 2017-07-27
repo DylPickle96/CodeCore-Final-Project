@@ -574,7 +574,7 @@ footer ul li {
 /* login page styling */
 
 .login-container {
-  margin-top: 10%;
+  margin-top: 8%;
   margin-bottom: 10%;
   background-color: rgba(0, 0, 0, 0);
   border-radius: 20px;
@@ -594,13 +594,25 @@ footer ul li {
   margin-top: 2%;
 }
 
-.login-background {
-  background-image: url(/assets/login-background.jpg);
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: cover;
+/* Form text styling */
+
+.form-text-style {
+  color: black;
+  
 }
 
+/* sign up styling */
+
+.signup-container {
+  margin-top: 10%;
+}
+
+.signup-header {
+  font-family: 'Open Sans';
+  font-weight: bold;
+  text-align: center;
+  color: #FF8C00;
+}
 /* slider styling */
 
 .slide-conv {
