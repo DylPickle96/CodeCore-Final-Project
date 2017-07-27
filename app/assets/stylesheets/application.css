@@ -598,13 +598,16 @@ footer ul li {
 
 .form-text-style {
   color: black;
-  
+  font-size: 1.5em;
+  padding-top: 1%;
 }
 
 /* sign up styling */
 
 .signup-container {
   margin-top: 10%;
+  text-align: center;
+  padding: 3%;
 }
 
 .signup-header {
