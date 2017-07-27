@@ -415,6 +415,16 @@ footer ul li {
   margin-left: -5px;
 }
 
+@media (min-width: 992px) {
+  .send {
+    width: 15%;
+  }
+  .message-bar {
+    width: 85%;
+    height: 30px;
+  }
+}
+
 .post-overview {
   font-family: 'Open Sans';
   text-align: center;
