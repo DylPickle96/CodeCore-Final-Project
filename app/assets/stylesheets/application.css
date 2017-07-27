@@ -398,7 +398,7 @@ footer ul li {
 }
 
 .message-bar {
-  width: 90%;
+  width: 80%;
   height: 30px;
 }
 
@@ -411,7 +411,7 @@ footer ul li {
 }
 
 .send {
-  width: 10%;
+  width: 20%;
   margin-left: -5px;
 }
 
